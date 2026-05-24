@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎯 AI Interview & Emotion Analyzer
 
 A full-stack AI-powered system that analyzes interview videos for **emotion detection**, **speech communication quality**, and **confidence scoring** using Computer Vision, NLP, and Machine Learning.
@@ -110,3 +111,6 @@ docker-compose up --build
 
 ## 📜 License
 MIT
+=======
+# AI-Interview-Emotion-Analyzer-project
+>>>>>>> cff33778a55d67ab938f4de474a01f586d5b0a82
