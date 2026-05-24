@@ -1,52 +1,92 @@
 import axios from "axios";
 
-const BASE = import.meta.env.VITE_API_URL || "http://localhost:8000";
+// Backend Render URL
+const BASE = "https://ai-interview-emotion-analyzer-project.onrender.com";
 
-export const api = axios.create({ baseURL: `${BASE}/api` });
+// Axios instance
+export const api = axios.create({
+  baseURL: `${BASE}/api`,
+});
 
+// Add JWT token automatically
 api.interceptors.request.use((cfg) => {
   const token = localStorage.getItem("token");
-  if (token) cfg.headers.Authorization = `Bearer ${token}`;
+
+  if (token) {
+    cfg.headers.Authorization = `Bearer ${token}`;
+  }
+
   return cfg;
 });
 
+// Auth helpers
 export const isAuthed = () => !!localStorage.getItem("token");
-export const getUser  = () => {
-  try { return JSON.parse(localStorage.getItem("user") || "null"); }
-  catch { return null; }
+
+export const getUser = () => {
+  try {
+    return JSON.parse(localStorage.getItem("user") || "null");
+  } catch {
+    return null;
+  }
 };
+
 export const logout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("user");
   window.location.href = "/login";
 };
 
-// ---- endpoints ----
+// ---------------- AUTH APIs ----------------
 export const authApi = {
-  register: (data) => api.post("/auth/register", data).then((r) => r.data),
-  login:    (data) => api.post("/auth/login",    data).then((r) => r.data),
-  me:       ()     => api.get("/auth/me").then((r) => r.data),
+  register: (data) =>
+    api.post("/auth/register", data).then((r) => r.data),
+
+  login: (data) =>
+    api.post("/auth/login", data).then((r) => r.data),
+
+  me: () =>
+    api.get("/auth/me").then((r) => r.data),
 };
 
+// ---------------- UPLOAD APIs ----------------
 export const uploadApi = {
   video: (file, onProgress) => {
     const fd = new FormData();
+
     fd.append("file", file);
-    return api.post("/upload/video", fd, {
-      headers: { "Content-Type": "multipart/form-data" },
-      onUploadProgress: (e) => {
-        if (onProgress && e.total) onProgress(Math.round((e.loaded * 100) / e.total));
-      },
-    }).then((r) => r.data);
+
+    return api
+      .post("/upload/video", fd, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+
+        onUploadProgress: (e) => {
+          if (onProgress && e.total) {
+            onProgress(
+              Math.round((e.loaded * 100) / e.total)
+            );
+          }
+        },
+      })
+      .then((r) => r.data);
   },
 };
 
+// ---------------- ANALYSIS APIs ----------------
 export const analysisApi = {
-  get:    (id) => api.get(`/analysis/${id}`).then((r) => r.data),
-  report: (id) => `${BASE}/api/analysis/${id}/report`,
+  get: (id) =>
+    api.get(`/analysis/${id}`).then((r) => r.data),
+
+  report: (id) =>
+    `${BASE}/api/analysis/${id}/report`,
 };
 
+// ---------------- DASHBOARD APIs ----------------
 export const dashboardApi = {
-  interviews: () => api.get("/dashboard/interviews").then((r) => r.data),
-  stats:      () => api.get("/dashboard/stats").then((r) => r.data),
+  interviews: () =>
+    api.get("/dashboard/interviews").then((r) => r.data),
+
+  stats: () =>
+    api.get("/dashboard/stats").then((r) => r.data),
 };
