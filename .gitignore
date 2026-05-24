@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+dist
+.env
+
+# python
+__pycache__/
+*.pyc
+venv/
+.env
+backend/app/uploads/*
+!backend/app/uploads/.gitkeep
+backend/app/ml/model.pkl
+backend/interview.db
+
+# os
+.DS_Store
+.idea
+.vscode
