@@ -14,20 +14,23 @@ This project is built for real-world interview analysis and is a strong portfoli
 
 # 🌐 Live Project Links
 
-## 🚀 Frontend Live
-:contentReference[oaicite:0]{index=0}
-
-## ⚡ Backend API
-:contentReference[oaicite:1]{index=1}
-
-## 📄 Swagger API Documentation
-:contentReference[oaicite:2]{index=2}
-
-## 💻 GitHub Repository
-:contentReference[oaicite:3]{index=3}
+## 🚀 Frontend Live Demo
+[Open Frontend Project](https://ai-interview-emotion-a-git-288cb4-shivam-kumar-mishras-projects.vercel.app/)
 
 ---
 
+## ⚡ Backend API
+[Open Backend Server](https://ai-interview-emotion-analyzer-project.onrender.com/)
+
+---
+
+## 📄 Swagger API Documentation
+[Open Swagger Docs](https://ai-interview-emotion-analyzer-project.onrender.com/docs)
+
+---
+
+## 💻 GitHub Repository
+[Open GitHub Repository](https://github.com/shivam-mishra1423/AI-Interview-Emotion-Analyzer-project/tree/main)
 # 🧠 Project Overview
 
 The system allows users to upload interview videos and automatically performs:
