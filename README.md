@@ -1,116 +1,323 @@
-<<<<<<< HEAD
 # 🎯 AI Interview & Emotion Analyzer
 
-A full-stack AI-powered system that analyzes interview videos for **emotion detection**, **speech communication quality**, and **confidence scoring** using Computer Vision, NLP, and Machine Learning.
+An advanced AI-powered Full Stack Web Application that analyzes interview videos using **Computer Vision, NLP, Deep Learning, and Machine Learning** to evaluate:
 
-> Perfect Data Science / ML / Full-Stack portfolio project for your resume.
+- Facial Emotions
+- Confidence Level
+- Communication Skills
+- Speech Quality
+- Interview Performance
 
----
-
-## 🧠 Tech Stack
-
-**Backend:** FastAPI, OpenCV, DeepFace, TensorFlow, MoviePy, SpeechRecognition, NLTK, spaCy, scikit-learn, SQLAlchemy, PostgreSQL
-**Frontend:** React 18, Vite, TailwindCSS, Framer Motion, Recharts, Axios, React Router
-**Deployment:** Docker, Render (backend), Vercel (frontend), Neon Postgres
+This project is built for real-world interview analysis and is a strong portfolio project for Data Science, AI/ML, and Full Stack Development roles.
 
 ---
 
-## 🚀 Features
+# 🌐 Live Project Links
 
-- 🎥 Video upload (drag & drop)
-- 😀 Facial emotion detection (Happy / Sad / Neutral / Angry / Fear / Surprise)
-- 🎙️ Audio extraction + Speech-to-Text
-- 💬 NLP analysis: speaking speed, filler words, positive words, grammar quality
-- 📊 ML-based Confidence Score prediction
-- 📈 Interactive dashboard with charts (Pie, Line, Bar)
-- 🔐 JWT-based authentication
-- 📄 PDF report generation
+## 🚀 Frontend Live
+:contentReference[oaicite:0]{index=0}
+
+## ⚡ Backend API
+:contentReference[oaicite:1]{index=1}
+
+## 📄 Swagger API Documentation
+:contentReference[oaicite:2]{index=2}
+
+## 💻 GitHub Repository
+:contentReference[oaicite:3]{index=3}
 
 ---
 
-## 📂 Project Structure
+# 🧠 Project Overview
 
-```
-AI-Interview-Emotion-Analyzer/
-├── backend/        # FastAPI + ML services
-├── frontend/       # React + Tailwind dashboard
+The system allows users to upload interview videos and automatically performs:
+
+- Facial Emotion Detection
+- Audio Extraction
+- Speech-to-Text Conversion
+- NLP-based Communication Analysis
+- Confidence Score Prediction
+- PDF Report Generation
+- Dashboard Analytics Visualization
+
+The complete application is deployed online using modern cloud technologies.
+
+---
+
+# 🚀 Main Features
+
+## 🎥 Video Upload System
+- Upload interview videos
+- Drag & Drop functionality
+- Secure file handling
+- Real-time upload progress tracking
+
+---
+
+## 😀 Facial Emotion Detection
+The AI model analyzes facial expressions frame-by-frame using Deep Learning.
+
+### Detected Emotions:
+- Happy
+- Sad
+- Angry
+- Fear
+- Neutral
+- Surprise
+- Disgust
+
+### Technologies Used:
+- OpenCV
+- DeepFace
+- TensorFlow
+
+---
+
+## 🎙️ Audio & Speech Analysis
+
+The system extracts audio from the uploaded interview video and converts speech into text.
+
+### Features:
+- Speech-to-Text
+- Communication Analysis
+- Speaking Speed Detection
+- Filler Word Detection
+- Positive Word Analysis
+
+### Technologies Used:
+- MoviePy
+- SpeechRecognition
+- NLP
+
+---
+
+## 💬 NLP Communication Analysis
+
+Natural Language Processing is used to analyze communication quality.
+
+### Analysis Includes:
+- Confidence in speaking
+- Filler words
+- Speaking rate
+- Positive vocabulary
+- Grammar quality
+- Sentence structure
+
+### Libraries Used:
+- NLTK
+- spaCy
+- scikit-learn
+
+---
+
+## 📊 AI Confidence Score Prediction
+
+Machine Learning models predict overall confidence score using:
+- Facial emotions
+- Speech quality
+- Communication metrics
+- Audio analysis
+
+### ML Algorithms:
+- Random Forest
+- Feature Engineering
+- Data Scaling
+
+---
+
+## 📈 Dashboard Analytics
+
+Interactive dashboard with:
+- Emotion charts
+- Confidence graphs
+- Performance analytics
+- Historical interview analysis
+
+### Frontend Visualization:
+- Pie Charts
+- Line Charts
+- Bar Graphs
+
+### Libraries:
+- Recharts
+- Framer Motion
+
+---
+
+## 🔐 Authentication System
+
+Secure authentication using JWT tokens.
+
+### Features:
+- User Registration
+- Login System
+- Protected Routes
+- Token Authentication
+
+---
+
+## 📄 PDF Report Generation
+
+Automatically generates downloadable interview analysis reports.
+
+Includes:
+- Confidence Score
+- Emotion Distribution
+- Speech Analysis
+- Communication Feedback
+
+---
+
+# 🛠️ Tech Stack
+
+# Backend Technologies
+- FastAPI
+- Python
+- SQLAlchemy
+- PostgreSQL
+- JWT Authentication
+- OpenCV
+- TensorFlow
+- DeepFace
+- NLP
+
+---
+
+# Frontend Technologies
+- React.js
+- Vite
+- Tailwind CSS
+- Axios
+- React Router
+- Recharts
+- Framer Motion
+
+---
+
+# AI / ML Technologies
+- TensorFlow
+- scikit-learn
+- NLP
+- Deep Learning
+- Computer Vision
+- Emotion Recognition
+
+---
+
+# ☁️ Deployment Technologies
+
+## Frontend Deployment
+- Vercel
+
+## Backend Deployment
+- Render
+
+## Database
+- PostgreSQL / Neon DB
+
+---
+
+# 📂 Project Structure
+
+```bash
+AI-Interview-Emotion-Analyzer-project/
+│
+├── backend/
+│   ├── app/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   └── package.json
+│
 ├── docker-compose.yml
 └── README.md
-```
-
----
-
-## 🛠️ Local Setup
-
-### 1. Clone & Enter
-
-```bash
-git clone <your-repo>
-cd AI-Interview-Emotion-Analyzer
-```
-
-### 2. Backend Setup
-
-```bash
+⚙️ Local Installation Setup
+1️⃣ Clone Repository
+git clone https://github.com/shivam-mishra1423/AI-Interview-Emotion-Analyzer-project.git
+cd AI-Interview-Emotion-Analyzer-project
+2️⃣ Backend Setup
 cd backend
+Create Virtual Environment
+Windows
 python -m venv venv
-source venv/bin/activate          # Windows: venv\Scripts\activate
+venv\Scripts\activate
+Linux / Mac
+python -m venv venv
+source venv/bin/activate
+Install Requirements
 pip install -r requirements.txt
+Download NLP Model
 python -m spacy download en_core_web_sm
-cp .env.example .env              # edit DB credentials
+Run Backend
 uvicorn app.main:app --reload --port 8000
-```
 
-Backend runs on `http://localhost:8000` — Swagger docs at `http://localhost:8000/docs`.
+Backend Running:
 
-### 3. Frontend Setup
+http://localhost:8000
 
-```bash
+Swagger Docs:
+
+http://localhost:8000/docs
+3️⃣ Frontend Setup
 cd frontend
+
+Install Packages:
+
 npm install
+
+Run Frontend:
+
 npm run dev
-```
 
-Frontend runs on `http://localhost:5173`.
+Frontend Running:
 
-### 4. Run with Docker (one command)
+http://localhost:5173
+🐳 Docker Setup
 
-```bash
+Run Full Project:
+
 docker-compose up --build
-```
-
----
-
-## ☁️ Deployment
-
-### Backend → Render
-1. Push repo to GitHub
-2. New Web Service → connect repo → root: `backend`
-3. Build: `pip install -r requirements.txt && python -m spacy download en_core_web_sm`
-4. Start: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-5. Add env vars from `.env.example`
-
-### Frontend → Vercel
-1. Import repo → root: `frontend`
-2. Set env: `VITE_API_URL=https://your-backend.onrender.com`
-3. Deploy
-
-### Database → Neon
-1. Create free Postgres at neon.tech → copy connection string → add to backend `.env` as `DATABASE_URL`
-
----
-
-## 📝 Resume Bullet Points
-
-- Built end-to-end AI Interview Analyzer using **FastAPI, OpenCV, DeepFace, TensorFlow**, processing video frames at 30 fps for real-time emotion classification across 7 emotion classes.
-- Implemented NLP pipeline with **NLTK + spaCy** for speech transcription analysis (filler words, speaking rate, sentiment) achieving 87% communication-quality classification accuracy.
-- Trained a **scikit-learn Random Forest** confidence-prediction model on a custom multi-modal feature set (facial, audio, linguistic) — R² = 0.91.
-- Designed React + Tailwind dashboard with **Recharts** visualizations; deployed full stack on **Render + Vercel + Neon Postgres** with CI/CD.
-
----
-
-## 📜 License
-MIT
-=======
-# AI-Interview-Emotion-Analyzer-project
->>>>>>> cff33778a55d67ab938f4de474a01f586d5b0a82
+🔥 API Endpoints
+Authentication APIs
+Method	Endpoint
+POST	/api/auth/register
+POST	/api/auth/login
+GET	/api/auth/me
+Upload APIs
+Method	Endpoint
+POST	/api/upload/video
+Analysis APIs
+Method	Endpoint
+GET	/api/analysis/{interview_id}
+GET	/api/analysis/{interview_id}/report
+Dashboard APIs
+Method	Endpoint
+GET	/api/dashboard/interviews
+GET	/api/dashboard/stats
+📸 Application Workflow
+User Uploads Video
+        ↓
+Video Processing
+        ↓
+Frame Extraction
+        ↓
+Emotion Detection
+        ↓
+Audio Extraction
+        ↓
+Speech-to-Text
+        ↓
+NLP Analysis
+        ↓
+Confidence Score Prediction
+        ↓
+Dashboard Visualization
+        ↓
+PDF Report Generation
